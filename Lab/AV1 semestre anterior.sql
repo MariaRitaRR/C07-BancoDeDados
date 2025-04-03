@@ -43,3 +43,60 @@ UPDATE Ninja SET titulo = "Chunin" WHERE nome = "Naruto" OR nome = "Sakura";
 select nome from Ninja where nome like 'Sa%' and char_length(nome) = 6;
 # Responda aqui a letra I
 select count(*) as totalNinjas from Ninja where dinheiro <= 1000;
+
+
+
+#PRINCIPAIS COMANDOS 
+-- Selecionar todos os campos de uma tabela
+SELECT * FROM Ninja;
+
+-- Selecionar colunas específicas
+SELECT nome, idade FROM Ninja;
+
+-- Renomear colunas usando AS
+SELECT nome AS Nome_Ninja, idade AS Idade_Anos FROM Ninja;
+
+-- Filtrar registros com WHERE
+SELECT * FROM Ninja WHERE idade > 18;
+
+-- Filtrar com múltiplas condições (AND, OR)
+SELECT * FROM Ninja WHERE idade > 18 AND dinheiro < 1000;
+
+-- Filtrar por valores específicos com IN
+SELECT * FROM Ninja WHERE titulo IN ('Genin', 'Chunin');
+
+-- Filtrar por padrões de texto com LIKE
+SELECT * FROM Ninja WHERE nome LIKE 'Sa%'; -- Começa com "Sa"
+SELECT * FROM Ninja WHERE nome LIKE '%ra'; -- Termina com "ra"
+SELECT * FROM Ninja WHERE nome LIKE '%ka%'; -- Contém "ka"
+
+-- Ordenar resultados (ASC = crescente, DESC = decrescente)
+SELECT * FROM Ninja ORDER BY idade ASC;
+SELECT * FROM Ninja ORDER BY idade DESC;
+
+-- Limitar a quantidade de resultados
+SELECT * FROM Ninja ORDER BY dinheiro DESC LIMIT 3;
+
+-- Contar quantos registros existem na tabela
+SELECT COUNT(*) AS total_ninjas FROM Ninja;
+
+-- Obter idade máxima e mínima
+SELECT MAX(idade) AS mais_velho, MIN(idade) AS mais_novo FROM Ninja;
+
+-- Calcular a média de um campo
+SELECT AVG(dinheiro) AS media_dinheiro FROM Ninja;
+
+-- Somar valores de uma coluna
+SELECT SUM(dinheiro) AS total_dinheiro FROM Ninja;
+
+-- Agrupar por tipo de Chakra e contar quantos ninjas existem por tipo
+SELECT tipoChakra, COUNT(*) AS total FROM Ninja GROUP BY tipoChakra;
+
+-- Filtrar grupos com HAVING (usado após GROUP BY)
+SELECT tipoChakra, COUNT(*) AS total FROM Ninja 
+GROUP BY tipoChakra HAVING total > 2;
+
+-- Juntar tabelas com JOIN (Exemplo: Missao e Ninja)
+SELECT Ninja.nome, Missao.nomeMissao 
+FROM Ninja 
+JOIN Missao ON Ninja.id = Missao.idNinja;

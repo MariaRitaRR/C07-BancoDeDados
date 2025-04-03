@@ -112,3 +112,5 @@ CREATE TABLE IF NOT EXISTS `Bruxos_has_CriaturasMagicas` (
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
+
+

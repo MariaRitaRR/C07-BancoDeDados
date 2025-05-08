@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `Bruxos` (
   `nome` VARCHAR(45) NOT NULL,
   `idade` INT NULL,
   `Casas_idCasa` INT NOT NULL,
-  `Varinhas_idVarinha` INT NULL,  -- Agora permite NULL para evitar erro de ON DELETE SET NULL
+  `Varinhas_idVarinha` INT NULL, 
   PRIMARY KEY (`idBruxos`),
   INDEX `fk_Bruxos_Casas_idx` (`Casas_idCasa` ASC) VISIBLE,
   INDEX `fk_Bruxos_Varinhas1_idx` (`Varinhas_idVarinha` ASC) VISIBLE,

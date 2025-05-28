@@ -65,6 +65,8 @@ INSERT INTO Habilidade (descricao, tipo) VALUES ('Furtividade', 'Passiva');
 INSERT INTO Habilidade (descricao, tipo) VALUES ('Cura', 'Ativa');
 INSERT INTO Habilidade (descricao, tipo) VALUES ('Canto da Inspiração', 'Ativa');
 
+
+
 -- Questão 5
 -- Atribua 2 habilidades para cada personagem, utilizando a tabela Personagem_Habilidade.
 
